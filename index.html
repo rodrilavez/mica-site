@@ -209,10 +209,20 @@
             .footer-left { align-items: center !important; text-align: center !important; }
             /* scale down main content on very small screens */
             main { 
-                height: calc(100vh - 180px) !important; 
-                padding: 70px 10px 120px 10px !important; 
+                height: calc(100vh - 200px) !important; 
+                padding: 70px 10px 140px 10px !important; 
             }
             #mobileMenu a { font-size: 16px; padding: 6px 12px; }
+            
+            /* reduce footer text size on mobile */
+            footer {
+                font-size: 9px !important;
+                padding: 8px 16px !important;
+            }
+            footer .footer-left span,
+            footer .footer-left a {
+                font-size: 9px !important;
+            }
 
             /* position hamburger on the right side */
             #hamburgerBtn {
