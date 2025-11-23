@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MICA - Music</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; overflow-x: hidden; position: relative; min-height: 100vh; background: #000; color: #fff;">
+    <!-- Video Background / Overlay -->
+    <div id="videoBackground" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;">
+        <div style="position: absolute; inset: 0; background: radial-gradient(circle at 20% 50%, rgba(20,20,20,0.6), rgba(10,10,10,0.85), rgba(0,0,0,1)); pointer-events: none;"></div>
+        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.05); pointer-events: none;"></div>
+    </div>
+
+    <!-- Header -->
+    <header style="position: fixed; top: 0; left: 0; right: 0; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: transparent; height: 64px;"> 
+        <!-- Social Icons Left -->
+        <div class="social-left" style="display: flex; gap: 20px;">
+            <a href="https://www.instagram.com/micaeternal/" target="_blank" rel="noopener"><img src="img/instagram.png" alt="Instagram" width="24" height="24" style="display: block;"></a>
+            <a href="https://open.spotify.com/artist/0ru8vaH80Oj3roXyoLmX4g?si=y1ZWSR0STZ6kWQwJNLvugQ" target="_blank" rel="noopener"><img src="img/spotify.png" alt="Spotify" width="24" height="24" style="display: block;"></a>
+            <a href="https://www.youtube.com/channel/UCTvrXsPlV1dNW0j1y1WLcGQ" target="_blank" rel="noopener"><img src="img/youtube.png" alt="YouTube" width="24" height="24" style="display: block;"></a>
+            <a href="https://www.instagram.com/micaeternal/" target="_blank" rel="noopener"><img src="img/tiktok.png" alt="TikTok" width="24" height="24" style="display: block;"></a>
+        </div>
+        <!-- Logo Center -->
+        <div style="position: absolute; left: 50%; transform: translateX(-50%);">
+            <a href="index.html"><img src="img/mica%20logo.png" alt="MICA" style="height:28px; display:block;"></a>
+        </div>
+        <!-- Navigation Right -->
+        <nav style="display: flex; gap: 30px; align-items: center;">
+            <a href="#" style="color: #fff; text-decoration: none; font-size: 16px; font-weight: 600; letter-spacing: 1px; opacity: 0.9;">SHOP</a>
+            <a href="tour.html" style="color: #fff; text-decoration: none; font-size: 16px; font-weight: 600; letter-spacing: 1px; opacity: 0.9;">TOUR</a>
+            <a href="music.html" style="color: #fff; text-decoration: none; font-size: 16px; font-weight: 600; letter-spacing: 1px; opacity: 0.9;">MUSIC</a>
+        </nav>
+        <!-- Mobile hamburger -->
+        <button id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" style="display: none; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); color: #fff; width: 44px; height: 44px; border-radius: 8px; font-size: 20px; cursor: pointer;">☰</button>
+    </header>
+    <!-- Mobile menu overlay -->
+    <div id="mobileMenu" aria-hidden="true"></div>
+
+    <!-- Main Content -->
+    <main style="display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: calc(64px + 40px) 20px 40px; width: 100%; box-sizing: border-box;">
+        <div style="width: 100%; max-width: 1200px; margin: 0 auto 40px; text-align: left;">
+            <!-- Eliminado el texto MICA, ya que el logo está en el header -->
+        </div>
+        <div class="music-grid" style="width: 100%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px 24px;">
+            <div class="music-item" style="background: rgba(20,20,20,0.98); border-radius: 0px; box-shadow: 0 4px 24px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; align-items: flex-start; transition: box-shadow 0.2s;">
+                <img src="img/americangothic_album.jpg" alt="AMERICAN GOTHIC" class="music-cover" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #333;">
+                <div class="music-title" style="font-size: 18px; font-weight: 600; margin: 16px 16px 4px 16px; letter-spacing: 1px;">AMERICAN GOTHIC</div>
+                <div class="music-meta" style="font-size: 14px; color: #bbb; margin: 0 16px 8px 16px;">2024 • EP</div>
+                <a href="#" target="_blank" style="margin: 0 16px 16px 16px; padding: 8px 0; width: calc(100% - 32px); background: transparent; border: 2px solid #fff; color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-align: center; text-transform: uppercase; text-decoration: none; border-radius: 0; display: block;">LISTEN</a>
+            </div>
+            <div class="music-item" style="background: rgba(20,20,20,0.98); border-radius: 0px; box-shadow: 0 4px 24px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; align-items: flex-start; transition: box-shadow 0.2s;">
+                <img src="img/angel_album.jpeg" alt="ANGEL" class="music-cover" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #333;">
+                <div class="music-title" style="font-size: 18px; font-weight: 600; margin: 16px 16px 4px 16px; letter-spacing: 1px;">ANGEL</div>
+                <div class="music-meta" style="font-size: 14px; color: #bbb; margin: 0 16px 8px 16px;">2024 • Single</div>
+                <a href="#" target="_blank" style="margin: 0 16px 16px 16px; padding: 8px 0; width: calc(100% - 32px); background: transparent; border: 2px solid #fff; color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-align: center; text-transform: uppercase; text-decoration: none; border-radius: 0; display: block;">LISTEN</a>
+            </div>
+            <div class="music-item" style="background: rgba(20,20,20,0.98); border-radius: 0px; box-shadow: 0 4px 24px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; align-items: flex-start; transition: box-shadow 0.2s;">
+                <img src="img/darkstar_album.jpeg" alt="DARKSTAR" class="music-cover" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #333;">
+                <div class="music-title" style="font-size: 18px; font-weight: 600; margin: 16px 16px 4px 16px; letter-spacing: 1px;">DARKSTAR</div>
+                <div class="music-meta" style="font-size: 14px; color: #bbb; margin: 0 16px 8px 16px;">2025 • Single</div>
+                <a href="#" target="_blank" style="margin: 0 16px 16px 16px; padding: 8px 0; width: calc(100% - 32px); background: transparent; border: 2px solid #fff; color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-align: center; text-transform: uppercase; text-decoration: none; border-radius: 0; display: block;">LISTEN</a>
+            </div>
+            <div class="music-item" style="background: rgba(20,20,20,0.98); border-radius: 0px; box-shadow: 0 4px 24px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; align-items: flex-start; transition: box-shadow 0.2s;">
+                <img src="img/insides_album.jpeg" alt="INSIDES" class="music-cover" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #333;">
+                <div class="music-title" style="font-size: 18px; font-weight: 600; margin: 16px 16px 4px 16px; letter-spacing: 1px;">INSIDES</div>
+                <div class="music-meta" style="font-size: 14px; color: #bbb; margin: 0 16px 8px 16px;">2022 • Single</div>
+                <a href="#" target="_blank" style="margin: 0 16px 16px 16px; padding: 8px 0; width: calc(100% - 32px); background: transparent; border: 2px solid #fff; color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-align: center; text-transform: uppercase; text-decoration: none; border-radius: 0; display: block;">LISTEN</a>
+            </div>
+            <div class="music-item" style="background: rgba(20,20,20,0.98); border-radius: 0px; box-shadow: 0 4px 24px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; align-items: flex-start; transition: box-shadow 0.2s;">
+                <img src="img/lilies_album.jpg" alt="LILIES" class="music-cover" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #333;">
+                <div class="music-title" style="font-size: 18px; font-weight: 600; margin: 16px 16px 4px 16px; letter-spacing: 1px;">LILIES</div>
+                <div class="music-meta" style="font-size: 14px; color: #bbb; margin: 0 16px 8px 16px;">2025 • Single</div>
+                <a href="#" target="_blank" style="margin: 0 16px 16px 16px; padding: 8px 0; width: calc(100% - 32px); background: transparent; border: 2px solid #fff; color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-align: center; text-transform: uppercase; text-decoration: none; border-radius: 0; display: block;">LISTEN</a>
+            </div>
+            <div class="music-item" style="background: rgba(20,20,20,0.98); border-radius: 0px; box-shadow: 0 4px 24px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; align-items: flex-start; transition: box-shadow 0.2s;">
+                <img src="img/lonestarmidnightmix_album.jpg" alt="LONESTAR MIDNIGHT MIX" class="music-cover" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #333;">
+                <div class="music-title" style="font-size: 18px; font-weight: 600; margin: 16px 16px 4px 16px; letter-spacing: 1px;">LONESTAR MIDNIGHT MIX</div>
+                <div class="music-meta" style="font-size: 14px; color: #bbb; margin: 0 16px 8px 16px;">2024 • Single</div>
+                <a href="#" target="_blank" style="margin: 0 16px 16px 16px; padding: 8px 0; width: calc(100% - 32px); background: transparent; border: 2px solid #fff; color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-align: center; text-transform: uppercase; text-decoration: none; border-radius: 0; display: block;">LISTEN</a>
+            </div>
+            <div class="music-item" style="background: rgba(20,20,20,0.98); border-radius: 0px; box-shadow: 0 4px 24px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; align-items: flex-start; transition: box-shadow 0.2s;">
+                <img src="img/rosalia_album.jpg" alt="ROSALIA" class="music-cover" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #333;">
+                <div class="music-title" style="font-size: 18px; font-weight: 600; margin: 16px 16px 4px 16px; letter-spacing: 1px;">ROSALIA</div>
+                <div class="music-meta" style="font-size: 14px; color: #bbb; margin: 0 16px 8px 16px;">2024 • Single</div>
+                <a href="#" target="_blank" style="margin: 0 16px 16px 16px; padding: 8px 0; width: calc(100% - 32px); background: transparent; border: 2px solid #fff; color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-align: center; text-transform: uppercase; text-decoration: none; border-radius: 0; display: block;">LISTEN</a>
+            </div>
+            <div class="music-item" style="background: rgba(20,20,20,0.98); border-radius: 0px; box-shadow: 0 4px 24px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; align-items: flex-start; transition: box-shadow 0.2s;">
+                <img src="img/shesinparties_album.jpeg" alt="SHE’S IN PARTIES" class="music-cover" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #333;">
+                <div class="music-title" style="font-size: 18px; font-weight: 600; margin: 16px 16px 4px 16px; letter-spacing: 1px;">SHE’S IN PARTIES</div>
+                <div class="music-meta" style="font-size: 14px; color: #bbb; margin: 0 16px 8px 16px;">2025 • Single</div>
+                <a href="#" target="_blank" style="margin: 0 16px 16px 16px; padding: 8px 0; width: calc(100% - 32px); background: transparent; border: 2px solid #fff; color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-align: center; text-transform: uppercase; text-decoration: none; border-radius: 0; display: block;">LISTEN</a>
+            </div>
+            <div class="music-item" style="background: rgba(20,20,20,0.98); border-radius: 0px; box-shadow: 0 4px 24px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; align-items: flex-start; transition: box-shadow 0.2s;">
+                <img src="img/silenceandsecrecy_album.jpeg" alt="SILENCE AND SECRECY" class="music-cover" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #333;">
+                <div class="music-title" style="font-size: 18px; font-weight: 600; margin: 16px 16px 4px 16px; letter-spacing: 1px;">SILENCE AND SECRECY</div>
+                <div class="music-meta" style="font-size: 14px; color: #bbb; margin: 0 16px 8px 16px;">2025 • Single</div>
+                <a href="#" target="_blank" style="margin: 0 16px 16px 16px; padding: 8px 0; width: calc(100% - 32px); background: transparent; border: 2px solid #fff; color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-align: center; text-transform: uppercase; text-decoration: none; border-radius: 0; display: block;">LISTEN</a>
+            </div>
+            <div class="music-item" style="background: rgba(20,20,20,0.98); border-radius: 0px; box-shadow: 0 4px 24px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; align-items: flex-start; transition: box-shadow 0.2s;">
+                <img src="img/spiritweekcheerleader_album.jpg" alt="SPIRIT WEEK CHEERLEADER" class="music-cover" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #333;">
+                <div class="music-title" style="font-size: 18px; font-weight: 600; margin: 16px 16px 4px 16px; letter-spacing: 1px;">SPIRIT WEEK CHEERLEADER</div>
+                <div class="music-meta" style="font-size: 14px; color: #bbb; margin: 0 16px 8px 16px;">2023 • Single</div>
+                <a href="#" target="_blank" style="margin: 0 16px 16px 16px; padding: 8px 0; width: calc(100% - 32px); background: transparent; border: 2px solid #fff; color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-align: center; text-transform: uppercase; text-decoration: none; border-radius: 0; display: block;">LISTEN</a>
+            </div>
+            <div class="music-item" style="background: rgba(20,20,20,0.98); border-radius: 0px; box-shadow: 0 4px 24px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; align-items: flex-start; transition: box-shadow 0.2s;">
+                <img src="img/twinpeaksslowed_album.jpg" alt="TWIN PEAKS SLOWED" class="music-cover" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #333;">
+                <div class="music-title" style="font-size: 18px; font-weight: 600; margin: 16px 16px 4px 16px; letter-spacing: 1px;">TWIN PEAKS SLOWED</div>
+                <div class="music-meta" style="font-size: 14px; color: #bbb; margin: 0 16px 8px 16px;">2024 • Single</div>
+                <a href="#" target="_blank" style="margin: 0 16px 16px 16px; padding: 8px 0; width: calc(100% - 32px); background: transparent; border: 2px solid #fff; color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-align: center; text-transform: uppercase; text-decoration: none; border-radius: 0; display: block;">LISTEN</a>
+            </div>
+            <div class="music-item" style="background: rgba(20,20,20,0.98); border-radius: 0px; box-shadow: 0 4px 24px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; align-items: flex-start; transition: box-shadow 0.2s;">
+                <img src="img/vampyr_album.webp" alt="VAMPYR" class="music-cover" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #333;">
+                <div class="music-title" style="font-size: 18px; font-weight: 600; margin: 16px 16px 4px 16px; letter-spacing: 1px;">VAMPYR</div>
+                <div class="music-meta" style="font-size: 14px; color: #bbb; margin: 0 16px 8px 16px;">2024 • Single</div>
+                <a href="#" target="_blank" style="margin: 0 16px 16px 16px; padding: 8px 0; width: calc(100% - 32px); background: transparent; border: 2px solid #fff; color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-align: center; text-transform: uppercase; text-decoration: none; border-radius: 0; display: block;">LISTEN</a>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer style="padding: 20px 24px; display: flex; justify-content: center; align-items: center; background: transparent; color: rgba(255,255,255,0.6); font-size: 11px;">
+        <div class="footer-left" style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+            <span>© 2025 MICA - ALL RIGHTS RESERVED</span>
+            <a href="mailto:contact@thesakaigroup.com" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 11px;">contact@thesakaigroup.com</a>
+        </div>
+    </footer>
+    <style>
+        html, body { height: 100%; }
+        a:hover { opacity: 1 !important; }
+        button:hover { background: rgba(255,255,255,0.06) !important; transform: translateY(-2px); }
+        .social-left { display: flex; }
+        #mobileMenu {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,1); /* fondo negro sólido */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-8%);
+            transition: opacity 250ms ease, transform 250ms ease;
+            z-index: 200;
+        }
+        #mobileMenu.open {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+        #mobileMenu a {
+            color: rgba(255,255,255,0.95);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 8px 14px;
+            background: transparent;
+            border-radius: 6px;
+        }
+        #mobileMenu .closeBtn {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .music-item { border-radius: 0px !important; }
+        @media (max-width: 768px) {
+            header { flex-direction: row; gap: 10px; padding: 10px 16px; height: 56px; }
+            .social-left { display: none !important; }
+            nav { display: none !important; }
+            #hamburgerBtn { display: block !important; }
+            footer { flex-direction: column; gap: 10px; text-align: center; font-size: 9px !important; padding: 8px 16px !important; }
+            .footer-left { align-items: center !important; text-align: center !important; }
+            .footer-left span, .footer-left a { font-size: 9px !important; }
+            main { padding: calc(56px + 20px) 10px 20px 10px !important; }
+            main h1 { font-size: 32px !important; }
+            #hamburgerBtn { position: absolute !important; right: 16px !important; top: 50% !important; transform: translateY(-50%) !important; z-index: 150 !important; }
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            const main = document.querySelector('main');
+            main.style.opacity = '0';
+            main.style.transform = 'translateY(30px)';
+            main.style.transition = 'opacity 1s ease, transform 1s ease';
+            setTimeout(() => {
+                main.style.opacity = '1';
+                main.style.transform = 'translateY(0)';
+            }, 100);
+        });
+
+        (function() {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            // build mobile menu links (keeps markup DRY)
+            mobileMenu.innerHTML = `
+                <div class="menuInner" style="display:flex;flex-direction:column;align-items:center;gap:18px;padding:28px 20px;max-width:420px;margin:0 auto;">
+                    <button class="closeBtn" aria-label="Close menu">✕</button>
+                    <a href="#">SHOP</a>
+                    <a href="tour.html">TOUR</a>
+                    <a href="#">MUSIC</a>
+                    <div style="height:6px;width:100%"></div>
+                    <div class="social-row" style="display:flex;gap:12px;align-items:center;justify-content:center;">
+                        <a href="https://www.instagram.com/micaeternal/" target="_blank" rel="noopener" aria-label="Instagram" style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,0.02);">
+                            <img src="img/instagram.png" alt="Instagram" width="20" height="20" style="display:block;">
+                        </a>
+                        <a href="https://open.spotify.com/artist/0ru8vaH80Oj3roXyoLmX4g?si=y1ZWSR0STZ6kWQwJNLvugQ" target="_blank" rel="noopener" aria-label="Spotify" style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,0.02);">
+                            <img src="img/spotify.png" alt="Spotify" width="20" height="20" style="display:block;">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCTvrXsPlV1dNW0j1y1WLcGQ" target="_blank" rel="noopener" aria-label="YouTube" style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,0.02);">
+                            <img src="img/youtube.png" alt="YouTube" width="20" height="20" style="display:block;">
+                        </a>
+                    </div>
+                </div>
+            `;
+
+            const closeBtn = mobileMenu.querySelector('.closeBtn');
+
+            function openMenu() {
+                mobileMenu.classList.add('open');
+                hamburgerBtn.setAttribute('aria-expanded', 'true');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                // subtle focus trap: focus first link
+                const firstLink = mobileMenu.querySelector('a');
+                if (firstLink) firstLink.focus();
+            }
+
+            function closeMenu() {
+                mobileMenu.classList.remove('open');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                hamburgerBtn.focus();
+            }
+
+            hamburgerBtn.addEventListener('click', function(e) {
+                if (mobileMenu.classList.contains('open')) closeMenu(); else openMenu();
+            });
+
+            closeBtn.addEventListener('click', closeMenu);
+
+            // close when clicking outside the menu content
+            mobileMenu.addEventListener('click', function(e) {
+                if (e.target === mobileMenu) closeMenu();
+            });
+
+            // close on Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+            });
+
+            // close menu when any mobile link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    closeMenu();
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
