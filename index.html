@@ -105,6 +105,14 @@
         </div>
     </footer>
 
+    <!-- Custom Popup -->
+    <div id="customPopup" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:999;align-items:center;justify-content:center;pointer-events:none;">
+        <div style="background:#000;border:2px solid #fff;padding:0;box-shadow:0 8px 32px rgba(0,0,0,0.7);display:flex;flex-direction:column;align-items:center;justify-content:center;width:260px;height:140px;position:relative;pointer-events:auto;">
+            <button id="closePopupBtn" aria-label="Close popup" style="position:absolute;top:8px;right:8px;background:transparent;border:none;color:#fff;font-size:20px;font-weight:700;width:32px;height:32px;cursor:pointer;">✕</button>
+            <span style="color:#fff;font-size:22px;font-weight:700;letter-spacing:3px;text-align:center;text-transform:uppercase;">THANK YOU</span>
+        </div>
+    </div>
+
     <style>
         /* ensure html/body full height */
         html, body { height: 100%; }
@@ -130,8 +138,8 @@
         /* Mobile menu styles */
         #mobileMenu {
             position: fixed;
-            inset: 0; /* top:0; right:0; bottom:0; left:0 */
-            background: rgba(0,0,0,0.9);
+            inset: 0;
+            background: rgba(0,0,0,1); /* fondo negro sólido */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -150,7 +158,6 @@
             transform: translateY(0);
         }
 
-        
         #mobileMenu a {
             color: rgba(255,255,255,0.95);
             text-decoration: none;
@@ -159,7 +166,7 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             padding: 8px 14px;
-            background: rgba(255,255,255,0.02);
+            background: transparent; /* sin fondo */
             border-radius: 6px;
         }
 
@@ -257,11 +264,12 @@
         // Form submission
         document.getElementById('emailForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const name = document.getElementById('nameInput').value.trim();
-            const email = document.getElementById('emailInput').value.trim();
-            alert('Thank you for subscribing, ' + (name || 'friend') + '!\nEmail: ' + email);
+            document.getElementById('customPopup').style.display = 'flex';
             document.getElementById('nameInput').value = '';
             document.getElementById('emailInput').value = '';
+        });
+        document.getElementById('closePopupBtn').addEventListener('click', function() {
+            document.getElementById('customPopup').style.display = 'none';
         });
 
         // Hover effects for buttons
@@ -301,7 +309,7 @@
                 <div class="menuInner" style="display:flex;flex-direction:column;align-items:center;gap:18px;padding:28px 20px;max-width:420px;margin:0 auto;">
                     <button class="closeBtn" aria-label="Close menu">✕</button>
                     <a href="#">SHOP</a>
-                    <a href="/tour">TOUR</a>
+                    <a href="tour.html">TOUR</a>
                     <a href="#">MUSIC</a>
                     <div style="height:6px;width:100%"></div>
                     <div class="social-row" style="display:flex;gap:12px;align-items:center;justify-content:center;">
